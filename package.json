@@ -1,0 +1,27 @@
+{
+  "name": "lista-produtos",
+  "version": "1.0.0",
+  "description": "Sistema para listar produtos",
+  "main": "server.js",
+  "scripts": {
+    "client": "cd client && npm start",
+    "server": "node server.js",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+  },
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0"
+  },
+  "keywords": [
+    "nodejs",
+    "node.js",
+    "react",
+    "react.js",
+    "express",
+    "mongodb"
+  ],
+  "author": "Vandemberg Lima",
+  "license": "ISC"
+}
