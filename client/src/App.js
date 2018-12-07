@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Layout, List, Row, Col } from 'antd';
-import MyHeader from './components/shared/layout/MyHeader';
+import MyHeader from './components/shared/layout/header/MyHeader';
 
 const { Content } = Layout;
 
@@ -57,10 +57,10 @@ class App extends Component {
                     <Row>
                        
                       <Col span={6} >
-                        <img className="produto-imagem" src="/toalhas.jpg" width="100px" height="100px"/>
-                        <img className="produto-imagem" src="/toalhas.jpg" width="100px" height="100px"/>
-                        <img className="produto-imagem" src="/toalhas.jpg" width="100px" height="100px"/>
-                        <img className="produto-imagem" src="/toalhas.jpg" width="100px" height="100px"/>
+                        <img alt="toalha" className="produto-imagem" src="/toalhas.jpg" width="100px" height="100px"/>
+                        <img alt="toalha" className="produto-imagem" src="/toalhas.jpg" width="100px" height="100px"/>
+                        <img alt="toalha" className="produto-imagem" src="/toalhas.jpg" width="100px" height="100px"/>
+                        <img alt="toalha" className="produto-imagem" src="/toalhas.jpg" width="100px" height="100px"/>
                       </Col>
                       
                       <Col span={12}>

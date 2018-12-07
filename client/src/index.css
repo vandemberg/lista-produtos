@@ -48,3 +48,7 @@
 .ant-select-selection-selected-value {
     float: left;
 }
+
+.certain-category-icon {
+    cursor: pointer;
+}
