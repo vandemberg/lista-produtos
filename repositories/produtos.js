@@ -24,6 +24,17 @@ class ProdutosRepository
         });
     }
 
+    async total(text)
+    {
+        let search = {};
+        
+        if(text) 
+            search.nome = new RegExp(`^${text}`, 'g');
+        
+            let result = await Produtos.countDocuments(search);
+            return result;
+    }
+
 }   
 
 module.exports = new ProdutosRepository();

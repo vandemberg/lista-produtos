@@ -11,12 +11,16 @@ router.get("/produtos", (req, res, next) => {
     
     repository.listAll(search, page, limite)
         .then((doc) => {
-            res.json({
-                total: 0,
-                page,
-                limite,
-                produtos: doc
-            })
+
+            repository.total(search).then((total) => {
+                res.json({
+                    total,
+                    page,
+                    limite,
+                    produtos: doc
+                });
+            });
+            
         });
         
 });
