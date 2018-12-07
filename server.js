@@ -3,8 +3,10 @@ const app = express();
 const port = process.env.PORT || 5000;
 const mongoose = require("mongoose");
 
+let url = 'mongodb://vandemberg:1234@localhost/lista-produtos';
+
 // Configurações
-mongoose.connect('mongodb://vandemberg:1234@localhost/lista-produtos');
+mongoose.connect(url);
 
 // Arquivos internos
 const router = require('./routes');
