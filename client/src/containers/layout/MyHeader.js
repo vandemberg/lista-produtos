@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import { Layout } from "antd";
 
-import HeaderBusca from "./HeaderBusca";
-import HeaderTitulo from "./HeaderTitulo"
+import HeaderBusca from "./../../components/shared/layout/header/HeaderBusca";
+import HeaderTitulo from "./../../components/shared/layout/header/HeaderTitulo";
 
 // SubComponenets
 const { Header } = Layout;
@@ -14,9 +14,7 @@ export default class MyHeader extends Component {
             <Header className="header">
                 
                 <nav className="header-nav">
-                    <div className="header-title">
-                        <strong><h1 className="header-title-text">Marttan </h1></strong>
-                    </div>
+                    <HeaderTitulo />
 
                     <div className="header-nav-busca">
                         <HeaderBusca />

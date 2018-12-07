@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { Layout } from 'antd';
-import MyHeader from './components/shared/layout/header/MyHeader';
-import ContentTitulo from "./components/shared/layout/content/ContentTitulo";
-import ContentMain from "./components/shared/layout/content/ContentMain";
-
-const { Content } = Layout;
+import MyHeader from  "./containers/layout/MyHeader";
+import MyContent from "./containers/layout/MyContent";
 
 class App extends Component {
 
@@ -14,18 +11,7 @@ class App extends Component {
       <Layout>
         
         <MyHeader />
-
-        <Layout>
-          
-          <Content>
-
-            <ContentTitulo />
-
-            <ContentMain />
-
-          </Content>
-        
-        </Layout>
+        <MyContent />
      
       </Layout>
     );
