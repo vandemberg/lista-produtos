@@ -41,12 +41,10 @@
     padding: 20px;
 }
 
-/*
-.lista-produto-item-informacoes {
-    float : left;
+.produto-item-informacoes {
+    display: inline-block
 }
 
-.lista-produto-item-valor {
-    float : right;
+.ant-select-selection-selected-value {
+    float: left;
 }
-*/

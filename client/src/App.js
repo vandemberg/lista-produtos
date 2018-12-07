@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Layout, List } from 'antd';
+import { Layout, List, Row, Col } from 'antd';
 import MyHeader from './components/shared/layout/MyHeader';
 
 const { Content } = Layout;
@@ -46,28 +46,40 @@ class App extends Component {
                   header="200 PRODUTOS ENCONTRADOS"
                   itemLayout="horizontal"
                   dataSource={data}
+                  pagination={{
+                    onChange: (page) => {
+                      console.log(page);
+                    },
+                    pageSize: 10,
+                    showSizeChanger: true
+                  }}
                   renderItem={item => (
-                    <div className="lista-produto-item">
+                    <Row>
+                       
+                      <Col span={6} >
+                        <img className="produto-imagem" src="/toalhas.jpg" width="100px" height="100px"/>
+                        <img className="produto-imagem" src="/toalhas.jpg" width="100px" height="100px"/>
+                        <img className="produto-imagem" src="/toalhas.jpg" width="100px" height="100px"/>
+                        <img className="produto-imagem" src="/toalhas.jpg" width="100px" height="100px"/>
+                      </Col>
                       
-                      <div className="lista-produto-item-informacoes">
-
-                        <div className="produto-imagens">
-                          <img className="produto-imagem" src="/toalhas.jpg" />
-                        </div>
+                      <Col span={12}>
                         <List.Item>
                           <List.Item.Meta title={item.nome} description={item.descricao}/>
                         </List.Item>
-                      </div>
+                      </Col>
 
-                      <div className="lista-produto-item-valor">
+                      <Col span={6}>
                         <strike> R$ 199.00 </strike> por <b> R$ 150.00</b>
-                      </div>
-                    </div>
+                      </Col>
+
+                    </Row>
                   )}
               />
-
             </div>
+            <Row>
 
+            </Row>
           </Content>
         
         </Layout>
