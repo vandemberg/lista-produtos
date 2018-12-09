@@ -7,13 +7,14 @@
     "client": "cd client && npm start",
     "server": "node server.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "seed" : "node db-seed.js"
+    "seed": "node db-seed.js"
   },
   "dependencies": {
     "express": "^4.16.2",
     "mongo-seeding": "^3.0.0",
     "mongoose": "^5.3.15",
-    "mongoose-seed": "^0.5.1"
+    "mongoose-seed": "^0.5.1",
+    "redux": "^4.0.1"
   },
   "devDependencies": {
     "concurrently": "^3.5.0"
