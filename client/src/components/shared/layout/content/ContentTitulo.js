@@ -13,9 +13,18 @@ class ContentTitulo extends Component {
     }
 
     titulo() {
+        
+        if(this.props.title) {
+            return this.props.title;
+        }
+
         return "Todos os Produtos";
     }
 
 }
 
-export default connect()(ContentTitulo);
+const mapStateToProps = state => {
+    return { title : state.title };
+}
+
+export default connect(mapStateToProps)(ContentTitulo);
