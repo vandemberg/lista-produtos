@@ -1,9 +1,16 @@
 import React, { Component } from "react";
 import { List } from "antd";
 import ProdutoLinha from "./../../produtos/ProdutoLinha";
+import * as produtosActions from "./../../../../actions/produtos";
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
 class ContentMail extends Component {
+
+    constructor(props) {
+      super(props);
+      this.props.loadProdutos();
+    }
 
     totalProdutos() {
       
@@ -44,4 +51,8 @@ const mapStateToProps = state => {
   return { produtos : state.produtos };
 }
 
-export default connect(mapStateToProps)(ContentMail);
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators(produtosActions, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ContentMail);
