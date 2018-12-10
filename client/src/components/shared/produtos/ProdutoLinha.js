@@ -21,7 +21,7 @@ export default class ProdutoLinha extends Component {
                 </Col>
 
                 <Col span={6}>
-                    <strike> R$ 199.00 </strike> por <b> R$ 150.00</b>
+                    <strike> R$ {this.props.item.valor_total} </strike> por <b> R$ {this.props.item.valor} </b>
                 </Col>
 
             </Row>

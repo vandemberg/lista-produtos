@@ -12,10 +12,13 @@ class ContentMail extends Component {
       this.props.loadProdutos();
     }
 
+    state = {
+      pageSize : 10
+    };
+
     totalProdutos() {
       
       let total = this.props.produtos.length;
-
       return `${total} PRODUTOS ENCONTRADOS`;
     
     }
@@ -27,12 +30,10 @@ class ContentMail extends Component {
               <List
                   header={ this.totalProdutos() }
                   itemLayout="horizontal"
-                  dataSource={this.props.produtos}
+                  dataSource={ this.props.produtos }
                   pagination={{
-                    onChange: (page) => {
-                      console.log(page);
-                    },
-                    pageSize: 10,
+                    onShowSizeChange: (current, size) => {this.setState({pageSize: size})},
+                    pageSize: this.state.pageSize,
                     showSizeChanger: true
                   }}
 

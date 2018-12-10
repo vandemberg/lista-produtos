@@ -10,15 +10,10 @@ router.get("/produtos", (req, res, next) => {
     let search = req.query.search;
     
     repository.listAll(search, page, limite)
-        .then((doc) => {
+        .then((produtos) => {
 
             repository.total(search).then((total) => {
-                res.json({
-                    total,
-                    page,
-                    limite,
-                    produtos: doc
-                });
+                res.json(produtos);
             });
             
         });

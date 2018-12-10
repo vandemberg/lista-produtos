@@ -4,7 +4,7 @@ export function loadProdutos(search = ''){
     
     return (dispatch) => 
     {
-        return axios.get('http://localhost:5000/api/produtos', {search})
+        return axios.get(`http://localhost:5000/api/produtos?search=${search}`)
             .then((response) => {
                 dispatch(refresh(response.data))
             });
@@ -14,6 +14,7 @@ export function loadProdutos(search = ''){
 }
 
 export function refresh(produtos) {
+    
     return {
         type: "REFRESH",
         produtos

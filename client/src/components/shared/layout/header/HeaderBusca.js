@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Form, Icon, Input } from 'antd';
 import * as titleActions from './../../../../actions/title';
+import * as produtosActions from './../../../../actions/produtos';
 import { connect }from "react-redux";
 import { bindActionCreators } from 'redux';
   
@@ -30,14 +31,14 @@ class HeaderBusca extends Component {
 
     research = () => {
         this.props.changeTitle(this.state.search);
-        this.props.refreshProdutos(this.state.search);
+        this.props.loadProdutos(this.state.search);
         this.setState({search: ''});
     }
 
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators(titleActions, dispatch);
+    return bindActionCreators({ ...titleActions, ...produtosActions }, dispatch);
 }
 
 export default connect(null, mapDispatchToProps)(HeaderBusca);
