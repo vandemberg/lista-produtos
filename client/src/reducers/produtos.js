@@ -1,15 +1,34 @@
-const produtos = ( state = [], action ) => {
+
+const data = [
+    {
+      nome: 'Produto A',
+      descricao: 'Descricao do produto A'
+    },
+    {
+      nome: 'Produto B',
+      descricao : 'Descricao do produto B'
+    },
+    {
+      nome: 'Produto C',
+      descricao : 'Descricao do produto C'
+    },
+    {
+      nome: 'Produto D',
+      descricao : 'Descricao do produto D'
+    },
+];
+
+
+export default function produtos( state = data, action ) {
     
     switch(action.type) {
         
-        case 'LISTA_PRODUTOS' :
-            state = action.lista;
-
-        default :
+        case 'REFRESH':
+            return [ action.produtos ];
+        
+        default:
             return state;
 
     }
-    
-}
 
-export default produtos;
+}

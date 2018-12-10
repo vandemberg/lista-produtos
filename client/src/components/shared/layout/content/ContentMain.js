@@ -1,36 +1,26 @@
 import React, { Component } from "react";
 import { List } from "antd";
 import ProdutoLinha from "./../../produtos/ProdutoLinha";
+import { connect } from "react-redux";
 
-const data = [
-    {
-      nome: 'Produto A',
-      descricao: 'Descricao do produto A'
-    },
-    {
-      nome: 'Produto B',
-      descricao : 'Descricao do produto B'
-    },
-    {
-      nome: 'Produto C',
-      descricao : 'Descricao do produto C'
-    },
-    {
-      nome: 'Produto D',
-      descricao : 'Descricao do produto D'
-    },
-];
+class ContentMail extends Component {
 
-export default class ContentMail extends Component {
+    totalProdutos() {
+      
+      let total = this.props.produtos.length;
+
+      return `${total} PRODUTOS ENCONTRADOS`;
+    
+    }
 
     render() {
         return (
             <div className="content-main">
               
               <List
-                  header="200 PRODUTOS ENCONTRADOS"
+                  header={ this.totalProdutos() }
                   itemLayout="horizontal"
-                  dataSource={data}
+                  dataSource={this.props.produtos}
                   pagination={{
                     onChange: (page) => {
                       console.log(page);
@@ -38,12 +28,20 @@ export default class ContentMail extends Component {
                     pageSize: 10,
                     showSizeChanger: true
                   }}
+
                   renderItem={item => (
                     <ProdutoLinha item={item} />
                   )}
+
               />
+
             </div>
         );
     }
-
 }
+
+const mapStateToProps = state => {
+  return { produtos : state.produtos };
+}
+
+export default connect(mapStateToProps)(ContentMail);

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 
-export default class ContentTitulo extends Component {
+import { connect } from 'react-redux';
+
+class ContentTitulo extends Component {
 
     render() {
         return (
@@ -15,3 +17,5 @@ export default class ContentTitulo extends Component {
     }
 
 }
+
+export default connect()(ContentTitulo);
