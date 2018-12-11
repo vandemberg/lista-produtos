@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 // Arquivos internos
 const router = require('./routes');
 
-let url = 'mongodb://vandemberg:1234@localhost/lista-produtos';
+let url = process.env.MONGOLAB_URI || 'mongodb://vandemberg:1234@localhost/lista-produtos';
 
 // Configurações
 mongoose.connect(url);
